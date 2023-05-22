@@ -1,0 +1,145 @@
+*{
+  padding: 0;
+  margin: 0;
+box-sizing: border-box;
+}
+
+body{
+  font-family: "Poppins";
+  background: linear-gradient(120deg,blueviolet, #fff);
+  min-height: 100vh;
+}
+
+
+header{
+  text-align: center;
+  margin: 100px 0 50px 0;
+    font-size: 30px;
+  font-weight: bold;
+  color: #fff;
+}
+
+form{
+  display: flex;
+  justify-content: center;
+}
+
+form input,form button{
+  font-size: 25px;
+  padding: 10px;
+  border: none;
+  background-color: #fff;
+}
+
+form button{
+  cursor: pointer;
+  color: blueviolet;
+
+}
+
+.btn:hover{
+  border: 1px solid blueviolet;
+  background-color: blueviolet;
+  color: #fff;
+  cursor: pointer;
+}
+
+input:focus{
+  outline: none
+}
+
+.h1{
+  color: #fff;
+  margin: 50px auto;
+  width: fit-content;
+  border-bottom: 1px solid blueviolet;
+}
+
+
+.tasks{
+    width: 330px;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0 0 10px;
+    font-size: 25px;
+    background-color: #fff;
+    margin: auto;
+    color: #8e8080;
+    margin-bottom: 10px;
+  
+}
+
+.tasks p{
+  cursor: move;
+}
+
+.tasks span{
+font-size: 18px;
+padding: 5px;
+
+
+}
+
+.tasks span:hover{
+  cursor: pointer;
+
+}
+
+.tasks span .fa-check{
+  color: green;
+  font-size: 25px;
+}
+
+.tasks span .fa-trash-can{
+  color: #E91E63;
+  padding-right: 5px
+}
+
+.fa-face-grin-hearts{
+  color: yellow;
+}
+
+.boxes{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  margin: 100px;
+}
+.boxes .box{
+  background-color: #fff;
+  width: 180px;
+padding: 10px;
+text-align: center;
+border-radius: 10px;
+color: #9b4ae6;
+position: relative;
+}
+
+.boxes .box .item{
+  width: 140px;
+  border: none;
+  background-color: #9b4ae6;
+  color: #eee;
+  margin: 10px auto;
+  text-align: center;
+  padding: 3px;
+  cursor: move;
+}
+
+.delet{
+  position: absolute;
+  right: 20px;
+  bottom: -28px;
+  background-color: #E91E63;
+  border:none;
+  color: #ffe;
+  padding: 3px;
+  width: 140px;
+  font-size: 18px;
+cursor: pointer;
+display: none;
+}
+
+
+
+
