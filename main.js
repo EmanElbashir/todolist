@@ -50,6 +50,7 @@ maindiv.addEventListener("click", (e) => {
     e.target.parentElement.parentElement.parentElement.style.backgroundColor =
       "#58d558";
   }
+
 });
 
 //Drag & Drop
@@ -85,14 +86,15 @@ function drageitem() {
 
       box.addEventListener("dragleave", function () {
         this.style.backgroundColor = "#fff";
-        
+
         
       });
       box.addEventListener("drop", function () {
         
         this.append(drag);
         this.style.backgroundColor = "#fff";
-      
+        localStorage.setItem("tod", maindiv.innerHTML);
+
 
       });
 
@@ -125,15 +127,14 @@ if(e.target.classList.contains("delet")){
 
 
 
-//delet tasks
+
+//delet elemnt tasks
 
 maindiv.addEventListener("dragleave", e=>{
-
-e.target.parentElement.style.display="none";
-localStorage.setItem("tod", maindiv.innerHTML);
+    if (e.target.classList.contains("item")) {
+      
+      e.target.parentElement.remove();}
 
 
 })
-
-
 
