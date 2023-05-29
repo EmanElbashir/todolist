@@ -57,7 +57,7 @@ input:focus{
 
 
 .tasks{
-    width: 330px;
+    width: 400px;
     display: flex;
         padding: 5px 0 0 10px;
     font-size: 25px;
@@ -185,6 +185,9 @@ font-size: 20px;
   }
   .boxes{
     flex-direction: column;
+  }
+  .tasks{
+    width: 300px;
   }
 
 }
