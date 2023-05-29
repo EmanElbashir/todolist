@@ -103,9 +103,7 @@ padding: 5px;
   padding-bottom: 200px;
 }
 
-.boxes .span{
-  display: none;
-}
+
 .boxes .box{
   width: 180px;
 padding: 10px;
@@ -136,35 +134,59 @@ background-color: transparent ;
 }
 
 .boxes .one .tasks{
-  background-color: #ffff00a6;
+  background-color: #ffff00a6  !important;
   color: #fff;
 
  }
 
  .boxes .two .tasks{
-  background-color: green;
+  background-color: green ;
   color: #fff;
  }
 
  .boxes .three .tasks{
-  background-color: #E91E63;
+  background-color: #ccb1af91 !important;
   color: #fff;
  }
 
-.delet{
-  position: absolute;
-  right: 20px;
-  bottom: -28px;
-  background-color: #E91E63;
-  border:none;
-  color: #ffe;
-  padding: 3px;
-  width: 140px;
-  font-size: 18px;
-cursor: pointer;
-display: none;
+
+.boxes .fa-trash-can{
+opacity: 0;
+}
+ .three .fa-trash-can{
+opacity: 1;
+  
 }
 
+.boxes .fa-check{
+  opacity: 0;
+}
 
+.two .fa-check{
+  opacity: 1;
+  color: #fff !important;
+}
+
+.boxes .fa-face-grin-hearts{
+  opacity: 0;
+}
+
+.two .fa-face-grin-hearts{
+  opacity: 1;
+}
+
+  
+
+
+
+@media (max-width: 400px){
+  form input,form button{
+font-size: 20px;
+  }
+  .boxes{
+    flex-direction: column;
+  }
+
+}
 
 

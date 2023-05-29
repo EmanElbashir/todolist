@@ -28,44 +28,24 @@ buttun.addEventListener("click", (eo) => {
   drageitem();
 });
 
-window.onload = function () {
-  let gititem = localStorage.getItem("tod");
-  if (gititem) {
-    maindiv.innerHTML = gititem;
-  }
-};
-
-// delet div
-
-maindiv.addEventListener("click", (e) => {
-  if (e.target.classList.contains("fa-trash-can")) {
-    e.target.parentElement.parentElement.parentElement.remove();
-  } else if (e.target.classList.contains("fa-check")) {
-    e.target.classList.replace("fa-check", "fa-face-grin-hearts");
-    e.target.parentElement.parentElement.parentElement.style.backgroundColor =
-      "#58d558";
-  }
-  localStorage.setItem("tod", maindiv.innerHTML);
 
 
-});
+
 
 //Drag & Drop
 let drag = null;
 let boxes = document.querySelectorAll(".box");
 
-let delet = document.querySelector(".delet");
 
 
 function drageitem() {
-  // let items = document.querySelectorAll(".item");
   let task = document.querySelectorAll(".tasks");
 
   task.forEach((tasks) => {
     tasks.addEventListener("dragstart", function () {
       drag = tasks;
-      tasks.style.opacity = "0.5";
-      delet.style.display = "block";
+      tasks.style.opacity = "1";
+
     });
 
     tasks.addEventListener("dragend", function () {
@@ -89,28 +69,71 @@ function drageitem() {
         this.style.marginTop = " 10px";
         this.style.border="1px solid blueviolet";
         localStorage.setItem("tod", maindiv.innerHTML );
+      
+        localStorage.setItem("task1", boxes[0].innerHTML );
+        localStorage.setItem("task2", boxes[1].innerHTML );
+        localStorage.setItem("task3", boxes[2].innerHTML );
+      
+
       });
     });
   });
 }
 
 
-  //delet elements
 
-var childElements = boxes[2].children;
-
-boxes[2].onclick = function (e) {
-  if (e.target.classList.contains("delet")) {
-    for (var i = childElements.length - 1; i > 0; i--) {
-      boxes[2].removeChild(childElements[i]);
-      e.target.style.display="none"
-      e.target.parentElement.style.border="none";
-      
-    }
+// delet fa-trash-can
 
 
+main.addEventListener("click", (e) => {
+  if (e.target.classList.contains("fa-trash-can")) {
+    e.target.parentElement.parentElement.parentElement.remove();
+    boxes[2].style.border="none";
+
+  } else if (e.target.classList.contains("fa-check")) {
+    e.target.classList.replace("fa-check", "fa-face-grin-hearts");
+    e.target.parentElement.parentElement.parentElement.style.backgroundColor =
+      "#58d558";
 
   }
-};
+  localStorage.setItem("tod", maindiv.innerHTML);
+  localStorage.setItem("task3", boxes[2].innerHTML );
+
+
+});
+
+// onload page
+
+window.onload = function () {
+  let gititem = localStorage.getItem("tod");
+  if (gititem) {
+    maindiv.innerHTML = gititem;
+    
+  }
+
+// 
+
+let gittask1 = localStorage.getItem("task1");
+if (gittask1) {
+  boxes[0].innerHTML += gittask1;
+}
+
+let gittask2 = localStorage.getItem("task2");
+if (gittask2) {
+  boxes[1].innerHTML += gittask2;
+  
+}
+
+let gittask3 = localStorage.getItem("task3");
+if (gittask3) {
+  boxes[2].innerHTML += gittask3;
+  
+  
+}
+
+
+}
+
+
 
 
